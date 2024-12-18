@@ -1,6 +1,6 @@
 async function fetchImages() {
     try {
-        const response = await fetch('https://rzml.onrender.com/api/images');
+        const response = await fetch('https://richard190104.pythonanywhere.com/api/images');
         const data = await response.json();
 
         const gallery = document.getElementById('gallery');
