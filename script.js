@@ -15,3 +15,7 @@ async function fetchImages() {
         console.error('Chyba pri načítaní obrázkov:', error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchImages();
+});
