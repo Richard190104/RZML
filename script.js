@@ -2,7 +2,7 @@ console.log("Script načítaný."); // Na kontrolu, či sa tento kód vykonáva
 
 const supabaseUrl = 'https://zpikwrtdtjglxbhbaecy.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOi...';
-console.log("Inicializácia Supabase klienta...");
+console.log("Inicializácia Supabase klienta...", supabase);
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 console.log("Supabase inicializovaný:", supabase);
 
