@@ -16,7 +16,17 @@ async function fetchImages() {
   if (error) {
     console.error("Chyba pri získavaní dát:", error);
   } else {
-    console.log("Získané dáta:", data);
+    data.forEach(image => {
+        
+ 
+    const imgElement = document.createElement("img");
+
+    imgElement.src = image.img_src;
+
+    const gallery = document.getElementById("gallery");
+
+    gallery.appendChild(imgElement);
+});
   }
 }
 
