@@ -1,15 +1,15 @@
 console.log("Script načítaný."); // Na kontrolu, či sa tento kód vykonáva
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
 const supabaseUrl = 'https://zpikwrtdtjglxbhbaecy.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOi...';
 console.log("Inicializácia Supabase klienta...");
-const supabase = createClient(supabaseUrl, supabaseKey);
-console.log("Supabase inicializovaný:", supabase);
+const supabases = supabase.createClient(supabaseUrl, supabaseKey);
+console.log("Supabase inicializovaný:", supabases);
 
 // Funkcia na získanie dát
 async function fetchImages() {
   console.log("Volám funkciu fetchImages...");
-  const { data, error } = await supabase
+  const { data, error } = await supabases
     .from('images') // Skontrolujte, že 'images' existuje vo vašej databáze
     .select('*');
 
