@@ -1,18 +1,22 @@
-const supabaseUrl = 'https://zpikwrtdtjglxbhbaecy.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpwaWt3cnRkdGpnbHhiaGJhZWN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ2MDQxODUsImV4cCI6MjA1MDE4MDE4NX0.MzFoRqOn_393c3yMM3D269vAgBKaMx5ZHurD-ggfLws';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+console.log("Script načítaný."); // Na kontrolu, či sa tento kód vykonáva
 
-// Príklad: Získať dáta z tabuľky 'users'
+const supabaseUrl = 'https://zpikwrtdtjglxbhbaecy.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOi...';
+console.log("Inicializácia Supabase klienta...");
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+console.log("Supabase inicializovaný:", supabase);
+
+// Funkcia na získanie dát
 async function fetchImages() {
-    console.log('ahoj')
+  console.log("Volám funkciu fetchImages...");
   const { data, error } = await supabase
-    .from('images')
+    .from('images') // Skontrolujte, že 'images' existuje vo vašej databáze
     .select('*');
-  console.log(data)
+
   if (error) {
-    console.error('Chyba:', error);
+    console.error("Chyba pri získavaní dát:", error);
   } else {
-    console.log('Dáta:', data);
+    console.log("Získané dáta:", data);
   }
 }
 
